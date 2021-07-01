@@ -34,7 +34,7 @@ public class HandleAuthPopUp {
 
 		devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
 
-		driver.get("https://the-internet.herokuapp.com/basic_auth");
+		driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
 
 	}
 

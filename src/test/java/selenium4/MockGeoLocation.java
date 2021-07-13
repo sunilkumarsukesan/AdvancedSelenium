@@ -1,5 +1,6 @@
 package selenium4;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ public class MockGeoLocation {
 		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
 		
 		Map<String, Object> coordinates = new HashMap<String, Object>();
 		coordinates.put("latitude", 40.378660);
@@ -25,7 +27,8 @@ public class MockGeoLocation {
 		
 	  ((ChromiumDriver) driver).executeCdpCommand("Emulation.setGeolocationOverride", coordinates);
 	  driver.get("https://oldnavy.gap.com/stores");
-		
+
+
 	}
 	
 
